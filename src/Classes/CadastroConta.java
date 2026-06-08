@@ -15,11 +15,17 @@ public class CadastroConta {
         return numero_conta;
     }
 
+    public void setNumero_conta(int numero_conta) {
+        this.numero_conta = numero_conta;
+    }
 
     public String getNome_titular() {
         return nome_titular;
     }
 
+    public void setNome_titular(String nome_titular) {
+        this.nome_titular = nome_titular;
+    }
 
     public double getSaldo() {
         return saldo;
