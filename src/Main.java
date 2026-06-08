@@ -57,8 +57,7 @@ public class Main {
                     boolean contaEncontrada = false;
                     for (CadastroConta conta : usuarios) {
                         if (conta.getNumero_conta() == contaDeposito) {
-                            double novoSaldo = conta.getSaldo() + valorDeposito;
-                            conta.setSaldo(novoSaldo);
+                            conta.depositar(valorDeposito);
 
                             System.out.printf("Depósito de R$ %.2f realizado com sucesso!\n", valorDeposito);
                             System.out.printf("Novo saldo da conta %d: R$ %.2f\n\n", conta.getNumero_conta(), conta.getSaldo());
@@ -89,10 +88,7 @@ public class Main {
                     boolean contaEncontrada2 = false;
                     for(CadastroConta conta : usuarios){
                         if(conta.getNumero_conta() == sacar){
-                            if (quantiaSaque <= conta.getSaldo()) {
-                                double novoSaldo = conta.getSaldo() - quantiaSaque;
-                                conta.setSaldo(novoSaldo);
-
+                            if (conta.sacar(quantiaSaque)) {
                                 System.out.printf("Saque no valor de R$ %.2f realizado com sucesso!\n", quantiaSaque);
                                 System.out.printf("Novo saldo da conta %d: R$ %.2f\n\n", conta.getNumero_conta(), conta.getSaldo());
                             } else {
